@@ -1,0 +1,64 @@
+a {
+  color: darkmagenta;
+  margin-right: 2vmax;
+  font-weight: bold;
+}
+
+.form-body {
+  background-color: lightblue;
+}
+
+.form-wrapper {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.input-wrapper {
+  margin-top: 2vmax;
+}
+
+section {
+  padding: 1vmax;
+  border-bottom: 1px solid black;
+  user-select: none;
+}
+
+summary {
+  padding: 1vmax 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+details[open] .progress-labels {
+  visibility: visible;
+}
+
+.progress-labels {
+  visibility: hidden;
+}
+
+.progress-labels span {
+  margin-right: 1vmax;
+}
+
+.chapter-row {
+  display: flex;
+}
+
+.chapter-row span {
+  flex: 1 1 100%;
+}
+
+.chapter-row input {
+  margin-right: 4vmax;
+}
+
+summary,
+.chapter-row input {
+  cursor: pointer;
+}
+
+#submit-button {
+  margin-top: 1vmax;
+}

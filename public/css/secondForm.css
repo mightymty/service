@@ -1,0 +1,19 @@
+a {
+  color: aliceblue;
+  margin-right: 1vmax;
+}
+
+.form-body {
+  background-color: lightpink;
+  color: darkblue;
+}
+
+.form-wrapper {
+  border: 3px solid green;
+  padding: 2vmax;
+  border-radius: 5px;
+}
+
+.input-wrapper {
+  margin-top: 2vmax;
+}

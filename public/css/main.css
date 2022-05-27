@@ -1,0 +1,17 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 1vmax;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.home-body {
+  background-color: lightgreen;
+}
+
+.home-wrapper {
+  color: lightseagreen;
+}
