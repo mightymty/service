@@ -16,12 +16,12 @@ app.use(bodyParser.json());
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
-app.get('/form1', (request, response) => {
-  response.sendFile(path.join(__dirname, '/public/firstForm.html'));
+app.get('/tornado', (request, response) => {
+  response.sendFile(path.join(__dirname, '/public/tornado.html'));
 });
 
-app.get('/form2', (request, response) => {
-  response.sendFile(path.join(__dirname, '/public/secondForm.html'));
+app.get('/paternoster', (request, response) => {
+  response.sendFile(path.join(__dirname, '/public/paternoster.html'));
 });
 
 app.get('/', (request, response) => {
