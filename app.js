@@ -65,10 +65,13 @@ app.post('/save', (req, res) => {
   //En html template som fylls med datan från req.body converteras till PDF
 
   const body = JSON.stringify(req.body);
-  const template = fs.readFileSync(path.join(__dirname, '/views/template.ejs'), 'utf8');
+  const template = fs.readFileSync(path.join(__dirname, '/public/pdf-template.ejs'), 'utf8');
   const html = ejs.compile(template);
   const page = html({ title: 'Välkommen', body });
-  const options = { format: 'A4' };
+  const options = {
+    format: 'A4',
+    base: req.protocol + '://' + req.get('host'),
+  };
 
   //res.render('template', { title: 'Välkommen', body });
   (async function run(){
