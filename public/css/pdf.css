@@ -1,0 +1,13 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 2vmax;
+}
+
+body {
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
