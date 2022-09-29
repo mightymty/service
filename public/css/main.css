@@ -15,3 +15,8 @@ body {
 .home-wrapper {
   color: lightseagreen;
 }
+
+.logo {
+  width: auto;
+  height: auto;
+}

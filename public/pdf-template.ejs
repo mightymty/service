@@ -10,7 +10,12 @@
     <meta name="theme-color" content="#b1dcff" />
   </head>
   <body>
-      <img class="logo" src="public/img/logo.png" /><br/>
-      <div class="text"><%-body %></div>
+      <img class="logo" src="/img/logo.png" />
+      <div class="text"><% %></div><br/><br/>
+      <div class="text">Datum: <%=date %></div><br/>
+      <div class="text">Maskintyp: <%-machine_type %></div><br/>
+      <div class="text">Kund: <%-client %></div><br/>
+      <div class="text">Stad: <%=location %></div><br/>
+      <div class="text">Maskinnummer: <%=unit_nbr %></div><br/>
   </body>
 </html>

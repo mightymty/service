@@ -52,11 +52,8 @@ const getTime = () => {
   const year = time.getFullYear();
   const month = time.getMonth();
   const day = time.getDate();
-  const hour = time.getHours();
-  const minute = time.getMinutes();
-  const second = time.getSeconds();
 
-  return `${year}${month}${day}${hour}${minute}${second}`;
+  return `${year}${month}${day}`;
 }
 
 app.post('/save', (req, res) => {
@@ -64,19 +61,19 @@ app.post('/save', (req, res) => {
   //Det är här man skriver koden för att convertera datan till PDF
   //En html template som fylls med datan från req.body converteras till PDF
 
-  const body = JSON.stringify(req.body);
   const template = fs.readFileSync(path.join(__dirname, '/public/pdf-template.ejs'), 'utf8');
   const html = ejs.compile(template);
-  const page = html({ title: 'Välkommen', body });
+  const page = html({ title: 'Välkommen', ...req.body });
   const options = {
     format: 'A4',
     base: req.protocol + '://' + req.get('host'),
   };
 
-  //res.render('template', { title: 'Välkommen', body });
   (async function run(){
 
-    const filePath = `../tornado-${getTime()}.pdf`;
+    const { machine_type, location, client, unit_nbr } = req.body;
+
+    const filePath = `../${getTime()}_${machine_type}_${location}_${client}_${unit_nbr}.pdf`;
     pdf.create(page, options).toFile(filePath, function(err, res) {
       if (err) return console.log(err);
       console.log(res);
@@ -88,7 +85,6 @@ app.post('/save', (req, res) => {
     res.sendFile(path.join(__dirname, filePath));
     return;
   }());
-
 });
 
 app.listen(PORT, () => {

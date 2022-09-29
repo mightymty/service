@@ -16,8 +16,10 @@
   <div class="form-wrapper">
     <a href="/">Hem</a>
     <div class="input-wrapper">
+      <img class="logo" src="/img/logo.png" />
       <form action="/save" method="POST">
         <h1>Paternoster IPN</h1>
+        <input type="hidden" id="machine_type" name="machine_type" value="Paternoster-IPN">
 
         <section id="info">
           <h3>Maskin information</h3>
@@ -27,6 +29,9 @@
 
           <label for="client">Kund:</label>
           <input type="text" id="client" name="client" required /><br /><br />
+
+          <label for="location">Stad:</label>
+          <input type="text" id="location" name="location" required /><br /><br />
 
           <label for="models">Modell:</label>
           <select id="models">
@@ -38,10 +43,10 @@
           <br /><br />
 
           <label for="nbr-of-starts">Antal Starter:</label>
-          <input type="text" id="nbr-of-starts" name="nbr-of-starts" required /><br /><br />
+          <input type="text" id="nbr_of_starts" name="nbr_of_starts" required /><br /><br />
 
           <label for="unit-nbr">Maskin nr:</label>
-          <input type="text" id="unit-nbr" name="unit-nbr" required /><br /><br />
+          <input type="text" id="unit_nbr" name="unit_nbr" required /><br /><br />
 
           <div>Underhåll:</div>
           <label for="preventive">Förebyggande</label>
