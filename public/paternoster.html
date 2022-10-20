@@ -34,8 +34,6 @@
           <input type="text" id="location" name="location" required /><br /><br />
 
           <label for="models">Modell:</label>
-          <input type="text" id="model" name="model" required /><br /><br />
-
           <select id="models">
             <option value="IPN 150">IPN 150</option>
             <option value="IPN 200">IPN 200</option>
@@ -45,7 +43,7 @@
           <br /><br />
 
           <label for="nbr-of-starts">Antal Starter:</label>
-          <input type="text" id="nbr_of_starts" name="nbr_of_starts" required /><br /><br />
+          <input type="number" id="nbr_of_starts" name="nbr_of_starts" required /><br /><br />
 
           <label for="unit-nbr">Maskin nr:</label>
           <input type="text" id="unit_nbr" name="unit_nbr" required /><br /><br />
@@ -63,7 +61,8 @@
           <input type="radio" id="check" name="inspection" value="check" /><br /><br />
 
           <label for="comment">Övrigt:</label><br />
-          <textarea name="comment" id="comment" cols="50" rows="5"></textarea><br /><br />
+          <textarea class="text-area" name="comment" id="comment" cols="50" rows="5"></textarea><br /><br />
+
         </section>
         <section id="kap-2">
           <details>
@@ -202,7 +201,7 @@
               <input type="radio" name="peripheral" id="separate" value="separate" />
               <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
             </div>
-          
+
           </details>
         </section>
 
@@ -241,7 +240,7 @@
               <input type="radio" name="peripheral" id="separate" value="separate" />
               <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
             </div>
-          
+
           </details>
         </section>
 
@@ -307,78 +306,78 @@
           </details>
         </section>
 
-    <section id="kap-6">
-      <details>
-        <summary>
-          <span>Testkörning (Kapitel 6)</span>
-          <span class="progress-labels">
-            <span>OK</span>
-            <span>Fixat</span>
-            <span>Separat</span>
-            <span>Excluderat</span>
-          </span>
-        </summary>
-      </details>
-    </section>
+        <section id="kap-6">
+          <details>
+            <summary>
+              <span>Testkörning (Kapitel 6)</span>
+              <span class="progress-labels">
+                <span>OK</span>
+                <span>Fixat</span>
+                <span>Separat</span>
+                <span>Excluderat</span>
+              </span>
+            </summary>
+          </details>
+        </section>
 
-    <section id="kap-7">
-      <details>
-        <summary>
-          <span>Utbildningar (Kapitel 7)</span>
-          <span class="progress-labels">
-            <span>OK</span>
-            <span>Fixat</span>
-            <span>Separat</span>
-            <span>Excluderat</span>
-          </span>
-        </summary>
+        <section id="kap-7">
+          <details>
+            <summary>
+              <span>Utbildningar (Kapitel 7)</span>
+              <span class="progress-labels">
+                <span>OK</span>
+                <span>Fixat</span>
+                <span>Separat</span>
+                <span>Excluderat</span>
+              </span>
+            </summary>
 
-        <div class="chapter-row">
-          <span>Basfunktioner:</span>
-          <input type="radio" name="coating-doors" id="ok" value="ok" />
-          <input type="radio" name="coating-doors" id="fixed" value="fixed" />
-          <input type="radio" name="coating-doors" id="separate" value="separate" />
-          <input type="radio" name="coating-doors" id="not-included" value="not-included" /><br />
-        </div>
+            <div class="chapter-row">
+              <span>Basfunktioner:</span>
+              <input type="radio" name="coating-doors" id="ok" value="ok" />
+              <input type="radio" name="coating-doors" id="fixed" value="fixed" />
+              <input type="radio" name="coating-doors" id="separate" value="separate" />
+              <input type="radio" name="coating-doors" id="not-included" value="not-included" /><br />
+            </div>
 
-        <div class="chapter-row">
-          <span>Operatörskoder:</span>
-          <input type="radio" name="undercarriage" id="ok" value="ok" />
-          <input type="radio" name="undercarriage" id="fixed" value="fixed" />
-          <input type="radio" name="undercarriage" id="separate" value="separate" />
-          <input type="radio" name="undercarriage" id="not-included" value="not-included" /><br />
-        </div>
+            <div class="chapter-row">
+              <span>Operatörskoder:</span>
+              <input type="radio" name="undercarriage" id="ok" value="ok" />
+              <input type="radio" name="undercarriage" id="fixed" value="fixed" />
+              <input type="radio" name="undercarriage" id="separate" value="separate" />
+              <input type="radio" name="undercarriage" id="not-included" value="not-included" /><br />
+            </div>
 
-        <div class="chapter-row">
-          <span>Säkerhet:</span>
-          <input type="radio" name="cables" id="ok" value="ok" />
-          <input type="radio" name="cables" id="fixed" value="fixed" />
-          <input type="radio" name="cables" id="separate" value="separate" />
-          <input type="radio" name="cables" id="not-included" value="not-included" /><br />
-        </div>
+            <div class="chapter-row">
+              <span>Säkerhet:</span>
+              <input type="radio" name="cables" id="ok" value="ok" />
+              <input type="radio" name="cables" id="fixed" value="fixed" />
+              <input type="radio" name="cables" id="separate" value="separate" />
+              <input type="radio" name="cables" id="not-included" value="not-included" /><br />
+            </div>
 
-        <div class="chapter-row">
-          <span>Lastning och vikter:</span>
-          <input type="radio" name="pallettes" id="ok" value="ok" />
-          <input type="radio" name="pallettes" id="fixed" value="fixed" />
-          <input type="radio" name="pallettes" id="separate" value="separate" />
-          <input type="radio" name="pallettes" id="not-included" value="not-included" /><br />
-        </div>
+            <div class="chapter-row">
+              <span>Lastning och vikter:</span>
+              <input type="radio" name="pallettes" id="ok" value="ok" />
+              <input type="radio" name="pallettes" id="fixed" value="fixed" />
+              <input type="radio" name="pallettes" id="separate" value="separate" />
+              <input type="radio" name="pallettes" id="not-included" value="not-included" /><br />
+            </div>
 
-        <div class="chapter-row">
-          <span>Backup av databaser:</span>
-          <input type="radio" name="peripheral" id="ok" value="ok" />
-          <input type="radio" name="peripheral" id="fixed" value="fixed" />
-          <input type="radio" name="peripheral" id="separate" value="separate" />
-          <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
-        </div>
+            <div class="chapter-row">
+              <span>Backup av databaser:</span>
+              <input type="radio" name="peripheral" id="ok" value="ok" />
+              <input type="radio" name="peripheral" id="fixed" value="fixed" />
+              <input type="radio" name="peripheral" id="separate" value="separate" />
+              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+            </div>
 
-      </details>
-    </section>
-    
-    <input id="submit-button" type="submit" value="Submit" />
-  </form>
-</div>  
-  <script src="js/main.js"></script>
+          </details>
+        </section>
+
+        <input id="submit-button" type="submit" value="Submit" />
+      </form>
+    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
