@@ -69,7 +69,9 @@ app.post('/save', (req, res) => {
     base: req.protocol + '://' + req.get('host'),
   };
 
-  (async function run(){
+  res.send(page);
+
+/*   (async function run(){
 
     const { machine_type, location, client, unit_nbr } = req.body;
 
@@ -84,7 +86,7 @@ app.post('/save', (req, res) => {
     console.log('POSTED FROM CLIENT: ', req.body);
     res.sendFile(path.join(__dirname, filePath));
     return;
-  }());
+  }()); */
 });
 
 app.listen(PORT, () => {
