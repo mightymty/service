@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/firstForm.css" />
+  <link rel="stylesheet" href="css/form.css" />
 
   <meta name="theme-color" content="#fafafa" />
 </head>
@@ -28,10 +28,10 @@
           <input type="date" id="date" name="date" /><br /><br />
 
           <label for="client">Kund:</label>
-          <input type="text" id="client" name="client" required /><br /><br />
+          <input type="text" id="client" name="client" /><br /><br />
 
           <label for="location">Stad:</label>
-          <input type="text" id="location" name="location" required /><br /><br />
+          <input type="text" id="location" name="location" /><br /><br />
 
           <label for="models">Modell:</label>
           <select id="models">
@@ -43,10 +43,10 @@
           <br /><br />
 
           <label for="nbr-of-starts">Antal Starter:</label>
-          <input type="number" id="nbr_of_starts" name="nbr_of_starts" required /><br /><br />
+          <input type="number" id="nbr_of_starts" name="nbr_of_starts" /><br /><br />
 
           <label for="unit-nbr">Maskin nr:</label>
-          <input type="text" id="unit_nbr" name="unit_nbr" required /><br /><br />
+          <input type="text" id="unit_nbr" name="unit_nbr" /><br /><br />
 
           <div>Underhåll:</div>
           <label for="preventive">Förebyggande</label>
@@ -68,60 +68,66 @@
           <details>
             <summary>
               <span>Visuell inspektion / Kontroll (Kapitel 2)</span>
-              <span class="progress-labels">
-                <span>OK</span>
-                <span>Fixat</span>
-                <span>Separat</span>
-                <span>Excluderat</span>
-              </span>
             </summary>
 
             <div class="chapter-row">
-              <span>Beklädnad, arbetsöppning samt dörr:</span>
-              <input type="radio" name="coating-doors" value="ok" checked />
-              <input type="radio" name="coating-doors" value="fixed" />
-              <input type="radio" name="coating-doors" value="separate" />
-              <input type="radio" name="coating-doors" value="not-included" /><br />
+              <label>Beklädnad, arbetsöppning samt dörr:</label>
+              <select name="Beklädnad, arbetsöppning samt dörr">
+                <option value="OK">OK</option>
+                <option value="Fixat">Fixat</option>
+                <option value="Separat">Separat</option>
+                <option value="Excluderat">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Inspektion undermaskin / öppning:</span>
-              <input type="radio" name="undercarriage" value="ok" checked />
-              <input type="radio" name="undercarriage" value="fixed" />
-              <input type="radio" name="undercarriage" value="separate" />
-              <input type="radio" name="undercarriage" value="not-included" /><br />
+              <label>Inspektion undermaskin / öppning:</label>
+              <select name="Inspektion undermaskin / öppning">
+                <option value="OK">OK</option>
+                <option value="Fixat">Fixat</option>
+                <option value="Separat">Separat</option>
+                <option value="Excluderat">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Kabeldragning inne i maskinen:</span>
-              <input type="radio" name="cables" value="ok" checked />
-              <input type="radio" name="cables" value="fixed" />
-              <input type="radio" name="cables" value="separate" />
-              <input type="radio" name="cables" value="not-included" /><br />
+              <label>Kabeldragning inne i maskinen:</label>
+              <select name="Kabeldragning inne i maskinen">
+                <option value="OK">OK</option>
+                <option value="Fixat">Fixat</option>
+                <option value="Separat">Separat</option>
+                <option value="Excluderat">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Bas- och mellanhyllplan:</span>
-              <input type="radio" name="pallettes" value="ok" checked />
-              <input type="radio" name="pallettes" value="fixed" />
-              <input type="radio" name="pallettes" value="separate" />
-              <input type="radio" name="pallettes" value="not-included" /><br />
+              <label>Bas- och mellanhyllplan:</label>
+              <select name="Bas- och mellanhyllplan">
+                <option value="OK">OK</option>
+                <option value="Fixat">Fixat</option>
+                <option value="Separat">Separat</option>
+                <option value="Excluderat">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Manöverpanel och display:</span>
-              <input type="radio" name="display" value="ok" checked />
-              <input type="radio" name="display" value="fixed" />
-              <input type="radio" name="display" value="separate" />
-              <input type="radio" name="display" value="not-included" /><br />
+              <label>Manöverpanel och display:</label>
+              <select name="Manöverpanel och display">
+                <option value="OK">OK</option>
+                <option value="Fixat">Fixat</option>
+                <option value="Separat">Separat</option>
+                <option value="Excluderat">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Osymetrisk last och rörelseriktning:</span>
-              <input type="radio" name="peripheral" value="ok" checked />
-              <input type="radio" name="peripheral" value="fixed" />
-              <input type="radio" name="peripheral" value="separate" />
-              <input type="radio" name="peripheral" value="not-included" /><br />
+              <label>Osymetrisk last och rörelseriktning:</label>
+              <select name="Osymetrisk last och rörelseriktning">
+                <option value="OK">OK</option>
+                <option value="Fixat">Fixat</option>
+                <option value="Separat">Separat</option>
+                <option value="Excluderat">Excluderat</option>
+              </select>
             </div>
 
           </details>

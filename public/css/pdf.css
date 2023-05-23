@@ -44,3 +44,7 @@ header {
 .form {
   flex: 1;
 }
+
+.chapter-row {
+  font-size: 12px;
+}

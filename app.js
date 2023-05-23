@@ -63,7 +63,7 @@ app.post('/save', (req, res) => {
 
   const template = fs.readFileSync(path.join(__dirname, '/public/pdf-template.ejs'), 'utf8');
   const html = ejs.compile(template);
-  const page = html({ title: 'Välkommen', ...req.body });
+  const page = html({ title: 'Välkommen', data: req.body, ...req.body });
   const options = {
     format: 'A4',
     base: req.protocol + '://' + req.get('host'),

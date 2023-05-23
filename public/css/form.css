@@ -48,6 +48,16 @@ details[open] .progress-labels {
 
 .chapter-row {
   display: flex;
+  justify-content: space-between;
+  padding: 1vmax 0;
+}
+
+.chapter-row label {
+  margin-right: 1vmax;
+}
+
+.chapter-row select {
+  height: 3vmax;
 }
 
 .chapter-row span {
