@@ -22,10 +22,11 @@ table {
 
 tr {
   width: 100%;
+  display: flex;
 }
 
 td {
-  width: 33.3333333%;
+  flex: 1;
 }
 
 header td {

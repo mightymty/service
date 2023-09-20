@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>constructor</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="/css/pdf.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/pdf.css" />
   <meta name="theme-color" content="#b1dcff" />
 </head>
 <body>
-
   <header>
     <table>
       <tr>
@@ -30,10 +29,8 @@
       <tr>
         <td>Datum: <%=date %>
         </td>
-        <td>Maskintyp: <%-machine_type %>
-        </td>
-        <td>Kund: <%-client %>
-        </td>
+        <td>Maskintyp: <%-machine_type %></td>
+        <td>Kund: <%-client %></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
@@ -42,18 +39,45 @@
         <td>Stad: <%=location %>
         </td>
       </tr>
-      <%=data.machine_type %>
-        <% for(let [key,value] of Object.entries(data) || []) { %>
-          <tr class="chapter-row">
+    </tbody>
+  </table>
+  <table>
+    <tr>
+      <td>
+        <table>
+          <tr>
+            <td>Visuell inspektion / Kontroll (Kapitel 2)</td>
+          </tr>
+          <% for(let [key,value] of Object.entries(data) || []) { %>
+            <% if (key.startsWith("2")) { %>
+              <tr class="chapter-row">
+                <td>
+                  <%=key.substring(1)%>:
+                </td>
+                <td>
+                  <%=value%>
+                </td>
+              </tr>
+              <% } %>
+                <% } %>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>Kommentarer:</td>
+          </tr>
+          <tr>
             <td>
-              <%=key%>:
-            </td>
-            <td>
-              <%=value%>
+              <%=Kommentarer %>
             </td>
           </tr>
-          <% } %>
-    </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+  </tr>
+  </tbody>
   </table>
   <footer>
     <table>

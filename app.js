@@ -69,9 +69,13 @@ app.post('/save', (req, res) => {
     base: req.protocol + '://' + req.get('host'),
   };
 
-  res.send(page);
+  //res.send(page); Uncomment to display page without saving pdf
 
-/*   (async function run(){
+  console.log('POSTED FROM CLIENT: ', req.body);
+
+  //Comment out all between here
+
+   (async function run(){
 
     const { machine_type, location, client, unit_nbr } = req.body;
 
@@ -86,7 +90,9 @@ app.post('/save', (req, res) => {
     console.log('POSTED FROM CLIENT: ', req.body);
     res.sendFile(path.join(__dirname, filePath));
     return;
-  }()); */
+  }());
+
+  // and here
 });
 
 app.listen(PORT, () => {
