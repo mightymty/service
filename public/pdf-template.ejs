@@ -51,7 +51,7 @@
           <% for(let [key,value] of Object.entries(data) || []) { %>
             <tr class="chapter-row">
               <td>
-                <%=key.substring(1)%>:
+                <%=key%>:
               </td>
               <td>
                 <%=value%>
@@ -67,7 +67,6 @@
           </tr>
           <tr>
             <td>
-              <%=Kommentarer %>
             </td>
           </tr>
         </table>
