@@ -17,7 +17,7 @@
     <a href="/">Hem</a>
     <div class="input-wrapper">
       <img class="logo" src="/img/logo.png" />
-      <form action="/save" method="POST" id="paternosterForm">
+      <form id="machineForm" action="/save" method="POST">
         <h1>Paternoster IPN</h1>
         <input type="hidden" id="machine_type" name="machine_type" value="Paternoster-IPN">
 
@@ -72,7 +72,7 @@
 
             <div class="chapter-row">
               <label>Beklädnad, arbetsöppning samt dörr:</label>
-              <select id="coating_doors" name="coating_doors">
+              <select id="2.0" name="coating_doors">
                 <option value="ok">OK</option>
                 <option value="fixed">Åtgärdat</option>
                 <option value="noted">Bevakas</option>
@@ -82,7 +82,7 @@
 
             <div class="chapter-row">
               <label>Inspektion undermaskin / öppning:</label>
-              <select id="inspection" name="2Inspektion undermaskin / öppning">
+              <select id="2.1" name="2Inspektion undermaskin / öppning">
                 <option value="ok">OK</option>
                 <option value="fixed">Åtgärdat</option>
                 <option value="noted">Bevakas</option>
@@ -92,7 +92,7 @@
 
             <div class="chapter-row">
               <label>Kabeldragning inne i maskinen:</label>
-              <select id="cables" name="2Kabeldragning inne i maskinen">
+              <select id="2.2" name="2Kabeldragning inne i maskinen">
                 <option value="ok">OK</option>
                 <option value="fixed">Åtgärdat</option>
                 <option value="noted">Bevakas</option>
@@ -102,7 +102,7 @@
 
             <div class="chapter-row">
               <label>Bas- och mellanhyllplan:</label>
-              <select id="shelves" name="2Bas- och mellanhyllplan">
+              <select id="2.3" name="2Bas- och mellanhyllplan">
                 <option value="ok">OK</option>
                 <option value="fixed">Åtgärdat</option>
                 <option value="noted">Bevakas</option>
@@ -112,7 +112,7 @@
 
             <div class="chapter-row">
               <label>Manöverpanel och display:</label>
-              <select id="display" name="2Manöverpanel och display">
+              <select id="2.4" name="2Manöverpanel och display">
                 <option value="ok">OK</option>
                 <option value="fixed">Åtgärdat</option>
                 <option value="noted">Bevakas</option>
@@ -388,22 +388,18 @@
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('paternosterForm');
+        const form = document.getElementById('machineForm');
 
-        form.addEventListener('submit', function (e) {
-          e.preventDefault(); // Prevent the default form submission
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
 
-          // Get the selected values from the dropdowns
-          const selectedValues = {
-            coating_doors: document.getElementById('coating-doors').value,
-            inspection: document.getElementById('inspection').value,
-            cables: document.getElementById('cables').value,
-            shelves: document.getElementById('shelves').value,
-            2_5: document.getElementById('2.5').value,
-          };
+          const data = {};
+          const formData = new FormData(event.target);
+          console.log(formData);
+          formData.forEach((value, key) => data[key] = value);
 
           // Log the selected values (you can perform further actions here)
-          console.log("selectedValues", selectedValues);
+          console.log("data: ", data);
         });
       });
     </script>
