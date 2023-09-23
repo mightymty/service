@@ -1,18 +1,51 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 2vmax;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: black;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: white;
   border: 1px solid black;
   border-radius: 5px;
 }
 
+table {
+  width: 100%;
+}
+
+tr {
+  width: 100%;
+  display: flex;
+}
+
+td {
+  flex: 1;
+}
+
+header td {
+  width: 50%;
+}
+
+header {
+  line-height: 0;
+}
+
 .logo {
   width: auto;
   height: auto;
+}
+
+.form {
+  flex: 1;
+}
+
+.chapter-row {
+  font-size: 12px;
 }

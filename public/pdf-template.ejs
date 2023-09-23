@@ -1,21 +1,100 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>fas10</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="/css/pdf.css">
-    <meta name="theme-color" content="#b1dcff" />
-  </head>
-  <body>
-      <img class="logo" src="/img/logo.png" />
-      <div class="text"><% %></div><br/><br/>
-      <div class="text">Datum: <%=date %></div><br/>
-      <div class="text">Maskintyp: <%-machine_type %></div><br/>
-      <div class="text">Kund: <%-client %></div><br/>
-      <div class="text">Stad: <%=location %></div><br/>
-      <div class="text">Maskinnummer: <%=unit_nbr %></div><br/>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>constructor</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/pdf.css" />
+  <meta name="theme-color" content="#b1dcff" />
+</head>
+<body>
+  <header>
+    <table>
+      <tr>
+        <td><img class="logo" src="/img/logo.png" /></td>
+        <td>
+          <h2>Underhållschema</h2>
+          <h4>
+            <%=data.machine_type %>
+          </h4>
+        </td>
+      </tr>
+    </table>
+  </header>
+
+  <table>
+    <tbody class="form">
+      <tr>
+        <td>Datum: <%=date %>
+        </td>
+        <td>Maskintyp: <%-machine_type %></td>
+        <td>Kund: <%-client %></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>Maskinnummer: <%=unit_nbr %>
+        </td>
+        <td>Stad: <%=location %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tr>
+      <td>
+        <table>
+          <tr>
+            <td>Visuell inspektion / Kontroll (Kapitel 2)</td>
+          </tr>
+          <% for(let [key,value] of Object.entries(data) || []) { %>
+            <% if (key.startsWith("2")) { %>
+              <tr class="chapter-row">
+                <td>
+                  <%=key.substring(1)%>:
+                </td>
+                <td>
+                  <%=value%>
+                </td>
+              </tr>
+              <% } %>
+                <% } %>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td>Kommentarer:</td>
+          </tr>
+          <tr>
+            <td>
+              <%=Kommentarer %>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  </tr>
+  </tbody>
+  </table>
+  <footer>
+    <table>
+      <tr>
+        <td>
+          <div>CONSTRUCTOR SVERIGE AB</div>
+          <div>Box 55043</div>
+          <div>400 53 GÖTEBORG</div>
+        </td>
+        <td>
+          <p>Org nr 556275-3839</p>
+        </td>
+        <td>
+          <p>wwww.constructor.se</p>
+        </td>
+      </tr>
+    </table>
+  </footer>
+</body>
 </html>

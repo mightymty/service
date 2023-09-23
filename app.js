@@ -63,13 +63,19 @@ app.post('/save', (req, res) => {
 
   const template = fs.readFileSync(path.join(__dirname, '/public/pdf-template.ejs'), 'utf8');
   const html = ejs.compile(template);
-  const page = html({ title: 'Välkommen', ...req.body });
+  const page = html({ title: 'Välkommen', data: req.body, ...req.body });
   const options = {
     format: 'A4',
     base: req.protocol + '://' + req.get('host'),
   };
 
-  (async function run(){
+  //res.send(page); Uncomment to display page without saving pdf
+
+  console.log('POSTED FROM CLIENT: ', req.body);
+
+  //Comment out all between here
+
+   (async function run(){
 
     const { machine_type, location, client, unit_nbr } = req.body;
 
@@ -85,6 +91,8 @@ app.post('/save', (req, res) => {
     res.sendFile(path.join(__dirname, filePath));
     return;
   }());
+
+  // and here
 });
 
 app.listen(PORT, () => {
