@@ -1,0 +1,82 @@
+body, h1, h2, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Grundläggande stilar för hela sidan */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fefeff;
+    color: #333;
+}
+
+header {
+    background-color: #d81921;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilar för formuläret och inmatningsfält */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="number"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Tabellstilar */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* H2-stilar */
+h2 {
+    color: #007BFF;
+    margin-top: 20px;
+}
+
+/* Anpassa dessa stilar för mobila enheter med mediaförfrågningar */
+@media (max-width: 768px) {
+    main {
+        margin: 10px;
+        padding: 10px;
+    }
+    input[type="text"], input[type="number"], textarea {
+        font-size: 16px;
+    }
+    table {
+        font-size: 16px;
+    }
+}

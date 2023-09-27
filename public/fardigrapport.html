@@ -1,0 +1,90 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Färdigrapport</title>
+    <style>
+        /* Anpassa stilen enligt dina önskemål */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .signature {
+            border: 1px solid #000;
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Färdigrapport</h1>
+        <form id="reportForm">
+            <div>
+                <label for="orderNumber">Ordernummer:</label>
+                <input type="text" id="orderNumber" name="orderNumber">
+            </div>
+            <div>
+                <label for="customer">Kund:</label>
+                <input type="text" id="customer" name="customer">
+            </div>
+            <div>
+                <label for="signature">Signatur:</label>
+                <canvas id="signatureCanvas" class="signature"></canvas>
+                <button type="button" id="clearSignature">Rensa</button>
+            </div>
+            <button type="button" id="saveReport">Spara rapport</button>
+            <button type="button" id="emailReport">Maila rapport</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript för att hantera signaturfunktionen med en canvas
+        const signatureCanvas = document.getElementById('signatureCanvas');
+        const clearSignatureButton = document.getElementById('clearSignature');
+        const saveReportButton = document.getElementById('saveReport');
+        const emailReportButton = document.getElementById('emailReport');
+
+        const context = signatureCanvas.getContext('2d');
+        let isDrawing = false;
+
+        signatureCanvas.addEventListener('mousedown', () => {
+            isDrawing = true;
+            context.beginPath();
+        });
+
+        signatureCanvas.addEventListener('mousemove', (e) => {
+            if (!isDrawing) return;
+            context.lineWidth = 2;
+            context.strokeStyle = '#000';
+            context.lineCap = 'round';
+
+            context.lineTo(e.clientX - signatureCanvas.getBoundingClientRect().left, e.clientY - signatureCanvas.getBoundingClientRect().top);
+            context.stroke();
+        });
+
+        signatureCanvas.addEventListener('mouseup', () => {
+            isDrawing = false;
+        });
+
+        clearSignatureButton.addEventListener('click', () => {
+            context.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+        });
+
+        saveReportButton.addEventListener('click', () => {
+            // Här kan du implementera sparlogik, till exempel genom att skapa en PDF av rapporten.
+            // Du kan använda bibliotek som pdf-lib eller jspdf för att generera PDF-filer.
+            alert('Rapporten har sparats.');
+        });
+
+        emailReportButton.addEventListener('click', () => {
+            // Här kan du implementera logik för att skicka e-post med rapporten.
+            // Du kan använda ett backend-system för att hantera e-post eller en tredjeparts API.
+            alert('Rapporten har skickats via e-post.');
+        });
+    </script>
+</body>
+</html>

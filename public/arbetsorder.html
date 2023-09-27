@@ -1,0 +1,195 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Min HTML-sida med extern CSS</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <h1>Rapportera arbetade timmar</h1>
+    
+    <form id="report-form">
+        <label for="foretag">Företag:</label>
+        <input type="text" id="foretag" name="foretag"><br><br>
+        
+        <label for="ordernummer">Ordernummer:</label>
+        <input type="text" id="ordernummer" name="ordernummer"><br><br>
+        
+        <table>
+            <tr>
+                <th>Dag</th>
+                <th>Typ av jobb</th>
+                <th>TIM</th>
+                <th>RES</th>
+                <th>TRAKT</th>
+                <th>MIL</th>
+            </tr>
+            <!-- Måndag -->
+            <tr>
+                <td>Måndag</td>
+                <td><input type="text" name="jobb_mandag"></td>
+                <td>
+                    <input type="number" name="tim_mandag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="res_mandag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="trakt_mandag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="mil_mandag" min="1" max="99" onchange="updateSummary()">
+                </td>
+            </tr>
+            <!-- Tisdag -->
+            <tr>
+                <td>Tisdag</td>
+                <td><input type="text" name="jobb_tisdag"></td>
+                <td>
+                    <input type="number" name="tim_tisdag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="res_tisdag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="trakt_tisdag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="mil_tisdag" min="1" max="99" onchange="updateSummary()">
+                </td>
+            </tr>
+            <!-- Onsdag -->
+            <tr>
+                <td>Onsdag</td>
+                <td><input type="text" name="jobb_onsdag"></td>
+                <td>
+                    <input type="number" name="tim_onsdag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="res_onsdag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="trakt_onsdag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="mil_onsdag" min="1" max="99" onchange="updateSummary()">
+                </td>
+            </tr>
+            <!-- Torsdag -->
+            <tr>
+                <td>Torsdag</td>
+                <td><input type="text" name="jobb_torsdag"></td>
+                <td>
+                    <input type="number" name="tim_torsdag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="res_torsdag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="trakt_torsdag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="mil_torsdag" min="1" max="99" onchange="updateSummary()">
+                </td>
+            </tr>
+            <!-- Fredag -->
+            <tr>
+                <td>Fredag</td>
+                <td><input type="text" name="jobb_fredag"></td>
+                <td>
+                    <input type="number" name="tim_fredag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="res_fredag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="trakt_fredag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="mil_fredag" min="1" max="99" onchange="updateSummary()">
+                </td>
+            </tr>
+            <!-- Lördag -->
+            <tr>
+                <td>Lördag</td>
+                <td><input type="text" name="jobb_lordag"></td>
+                <td>
+                    <input type="number" name="tim_lordag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="res_lordag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="trakt_lordag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="mil_lordag" min="1" max="99" onchange="updateSummary()">
+                </td>
+            </tr>
+            <!-- Söndag -->
+            <tr>
+                <td>Söndag</td>
+                <td><input type="text" name="jobb_sondag"></td>
+                <td>
+                    <input type="number" name="tim_sondag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="res_sondag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="trakt_sondag" min="1" max="12" onchange="updateSummary()">
+                </td>
+                <td>
+                    <input type="number" name="mil_sondag" min="1" max="99" onchange="updateSummary()">
+                </td>
+            </tr>
+            <tr>
+                <td>Summa</td>
+                <td></td>
+                <td id="sum_tim">0</td>
+                <td id="sum_res">0</td>
+                <td id="sum_trakt">0</td>
+                <td id="sum_mil">0</td>
+            </tr>
+        </table>
+        
+        <label for="anmarkningar">Anmärkningar:</label><br>
+        <textarea id="anmarkningar" name="anmarkningar" rows="4" cols="50"></textarea><br><br>
+        
+        <label for="namn">Namn/namn:</label><br>
+        <input type="text" id="namn" name="namn"><br><br>
+        
+        <label for="ort">Ort:</label><br>
+        <input type="text" id="ort" name="ort"><br><br>
+        
+        <input type="submit" value="Skicka rapport">
+    </form>
+    
+    <script>
+        // Funktion för att uppdatera sammanfattningen när något ändras
+        function updateSummary() {
+            let sum_tim = 0;
+            let sum_res = 0;
+            let sum_trakt = 0;
+            let sum_mil = 0;
+
+            const days = ['mandag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lordag', 'sondag'];
+
+            days.forEach((day) => {
+                const tim = parseInt(document.querySelector(`input[name="tim_${day}"]`).value) || 0;
+                const res = parseInt(document.querySelector(`input[name="res_${day}"]`).value) || 0;
+                const trakt = parseInt(document.querySelector(`input[name="trakt_${day}"]`).value) || 0;
+                const mil = parseInt(document.querySelector(`input[name="mil_${day}"]`).value) || 0;
+
+                sum_tim += tim;
+                sum_res += res;
+                sum_trakt += trakt;
+                sum_mil += mil;
+            });
+
+            document.getElementById('sum_tim').textContent = sum_tim;
+            document.getElementById('sum_res').textContent = sum_res;
+            document.getElementById('sum_trakt').textContent = sum_trakt;
+            document.getElementById('sum_mil').textContent = sum_mil;
+        }
+    </script>
+</body>
+</html>
