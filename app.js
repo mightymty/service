@@ -24,6 +24,14 @@ app.get('/paternoster', (request, response) => {
   response.sendFile(path.join(__dirname, '/public/paternoster.html'));
 });
 
+app.get('/fardigrapport', (request, response) => {
+  response.sendFile(path.join(__dirname, '/public/fardigrapport.html'));
+});
+
+app.get('/arbetsorder', (request, response) => {
+  response.sendFile(path.join(__dirname, '/public/arbetsorder.html'));
+});
+
 app.get('/', (request, response) => {
   //This route will default to index.html. If that does not exist the text No index found will show.
   response.send('No index found!');

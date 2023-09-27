@@ -5,18 +5,52 @@ html, body {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open SanRs', sans-serif;
 }
 
 .home-body {
-  background-color: lightgreen;
+  background-color: whitesmoke;
 }
 
 .home-wrapper {
-  color: lightseagreen;
+  color: #000000;
 }
 
 .logo {
   width: auto;
   height: auto;
+}
+a {
+  display: inline-block;
+  width: calc(50% - 20px); /* Dela sidan i två kolumner med lite marginal */
+  padding: 20px 0;
+  background-color: #d81921; /* Bakgrundsfärg för knappen */
+  color: #fff; /* Textfärg */
+  text-decoration: none; /* Ta bort standard understrykning */
+  border-radius: 10px; /* Gör hörnen mindre rundade */
+  margin: 5px; /* Avstånd mellan knapparna */
+  text-align: center; /* Centrera texten horisontellt */
+  font-weight: bold; /* Fet text */
+  box-sizing: border-box; /* Inkludera padding i bredden */
+}
+
+/* Hovringseffekt när musen sveper över knappen */
+a:hover {
+  background-color: #6b3005; /* Ändra bakgrundsfärg på hovring */
+  transition: background-color 0.3s ease; /* Smidig övergångseffekt */
+}
+
+/* Anpassa layouten för två rader */
+@media (min-width: 768px) {
+  .home-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  a {
+    width: calc(50% - 20px); /* Dela sidan i två kolumner med marginal på större skärmar */
+  }
+  /* Ändra ordningen för de specifika länkarna för andra raden */
+  a[href="/tornado"], a[href="/paternoster"], a[href="/shuttle"] {
+    order: 1; /* Ändra ordningen för de specifika länkarna */
+  }
 }

@@ -17,7 +17,7 @@
     <a href="/">Hem</a>
     <div class="input-wrapper">
       <img class="logo" src="/img/logo.png" />
-      <form action="/save" method="POST" id="paternosterForm">
+      <form id="machineForm" action="/save" method="POST">
         <h1>Paternoster IPN</h1>
         <input type="hidden" id="machine_type" name="machine_type" value="Paternoster-IPN">
 
@@ -72,145 +72,166 @@
 
             <div class="chapter-row">
               <label>Beklädnad, arbetsöppning samt dörr:</label>
-              <select id="coating-doors" name="2Beklädnad, arbetsöppning samt dörr">
-                <option value="OK">OK</option>
-                <option value="Fixat">Fixat</option>
-                <option value="Separat">Separat</option>
-                <option value="Excluderat">Excluderat</option>
+              <select id="2.0" name="coating_doors">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
               </select>
             </div>
 
             <div class="chapter-row">
               <label>Inspektion undermaskin / öppning:</label>
-              <select id="inspection" name="2Inspektion undermaskin / öppning">
-                <option value="OK">OK</option>
-                <option value="Fixat">Fixat</option>
-                <option value="Separat">Separat</option>
-                <option value="Excluderat">Excluderat</option>
+              <select id="2.1" name="under_opening">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
               </select>
             </div>
 
             <div class="chapter-row">
               <label>Kabeldragning inne i maskinen:</label>
-              <select id="cables" name="2Kabeldragning inne i maskinen">
-                <option value="OK">OK</option>
-                <option value="Fixat">Fixat</option>
-                <option value="Separat">Separat</option>
-                <option value="Excluderat">Excluderat</option>
+              <select id="2.2" name="cabels_inside">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
               </select>
             </div>
 
             <div class="chapter-row">
               <label>Bas- och mellanhyllplan:</label>
-              <select id="shelves" name="2Bas- och mellanhyllplan">
-                <option value="OK">OK</option>
-                <option value="Fixat">Fixat</option>
-                <option value="Separat">Separat</option>
-                <option value="Excluderat">Excluderat</option>
+              <select id="2.3" name="carriers_levels">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
               </select>
             </div>
 
             <div class="chapter-row">
               <label>Manöverpanel och display:</label>
-              <select id="display" name="2Manöverpanel och display">
-                <option value="OK">OK</option>
-                <option value="Fixat">Fixat</option>
-                <option value="Separat">Separat</option>
-                <option value="Excluderat">Excluderat</option>
+              <select id="2.4" name="display">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
               </select>
             </div>
 
             <div class="chapter-row">
               <label>Osymetrisk last och rörelseriktning:</label>
-              <select id="2.5" name="2Osymetrisk last och rörelseriktning">
-                <option value="OK">OK</option>
-                <option value="Fixat">Fixat</option>
-                <option value="Separat">Separat</option>
-                <option value="Excluderat">Excluderat</option>
+              <select id="2.5" name="load_direction">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
               </select>
             </div>
             <div class="chapter-row">
-              <textarea name="Kommentarer" id="Kommentarer" cols="50" rows="5"></textarea>
+              <textarea name="comments_2" id="comments_2" cols="50" rows="5"></textarea>
             </div>
-
           </details>
         </section>
         <section id="kap-3">
           <details>
             <summary>
               <span>Kontroll och justeringar (Kapitel 3)</span>
-              <span class="progress-labels">
-                <span>OK</span>
-                <span>Fixat</span>
-                <span>Separat</span>
-                <span>Excluderat</span>
-              </span>
             </summary>
 
             <div class="chapter-row">
-              <span>Huvudkedja:</span>
-              <input type="radio" name="coating-doors" id="ok" value="ok" />
-              <input type="radio" name="coating-doors" id="fixed" value="fixed" />
-              <input type="radio" name="coating-doors" id="separate" value="separate" />
-              <input type="radio" name="coating-doors" id="not-included" value="not-included" /><br />
+              <label>Huvudkedja:</label>
+              <select id="3.0" name="mainchain">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Kedjehjul och torque enhet:</span>
-              <input type="radio" name="undercarriage" id="ok" value="ok" />
-              <input type="radio" name="undercarriage" id="fixed" value="fixed" />
-              <input type="radio" name="undercarriage" id="separate" value="separate" />
-              <input type="radio" name="undercarriage" id="not-included" value="not-included" /><br />
+              <label>Kedjehjul och torque enhet:</label>
+              <select id="3.1" name="chain_torque">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Lager och nedre drivaxel:</span>
-              <input type="radio" name="cables" id="ok" value="ok" />
-              <input type="radio" name="cables" id="fixed" value="fixed" />
-              <input type="radio" name="cables" id="separate" value="separate" />
-              <input type="radio" name="cables" id="not-included" value="not-included" /><br />
+              <label>Lager och nedre drivaxel:</label>
+              <select id="3.2" name="bearing">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Drivkedja och drev:</span>
-              <input type="radio" name="pallettes" id="ok" value="ok" />
-              <input type="radio" name="pallettes" id="fixed" value="fixed" />
-              <input type="radio" name="pallettes" id="separate" value="separate" />
-              <input type="radio" name="pallettes" id="not-included" value="not-included" /><br />
+              <label>Drivkedja och drev:</label>
+              <select id="3.3" name="drivechain">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Upphängning av hyllplan / styrhjul:</span>
-              <input type="radio" name="peripheral" id="ok" value="ok" />
-              <input type="radio" name="peripheral" id="fixed" value="fixed" />
-              <input type="radio" name="peripheral" id="separate" value="separate" />
-              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+              <label>Drivenhet:</label>
+              <select id="3.4" name="driveunit">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
+            </div>
+            
+            <div class="chapter-row">
+              <label>Upphängning av hyllplan / styrhjul:</label>
+              <select id="3.5" name="carrier_support">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Hyllplansposition / lutning:</span>
-              <input type="radio" name="peripheral" id="ok" value="ok" />
-              <input type="radio" name="peripheral" id="fixed" value="fixed" />
-              <input type="radio" name="peripheral" id="separate" value="separate" />
-              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+              <label>Hyllplansposition / lutning:</label>
+              <select id="3.6" name="carrier_inclanation">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Styrgejder och vändkurvor:</span>
-              <input type="radio" name="peripheral" id="ok" value="ok" />
-              <input type="radio" name="peripheral" id="fixed" value="fixed" />
-              <input type="radio" name="peripheral" id="separate" value="separate" />
-              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+              <label>Styrgejder och vändkurvor:</label>
+              <select id="3.7" name="guide_curves">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Dörr mekanism:</span>
-              <input type="radio" name="peripheral" id="ok" value="ok" />
-              <input type="radio" name="peripheral" id="fixed" value="fixed" />
-              <input type="radio" name="peripheral" id="separate" value="separate" />
-              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+              <label>Dörr mekanism:</label>
+              <select id="3.8" name="door">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
-
+            <div class="chapter-row">
+              <textarea name="comments_3" id="comments_3" cols="50" rows="5"></textarea>
+            </div>
           </details>
         </section>
 
@@ -218,38 +239,60 @@
           <details>
             <summary>
               <span>Smörjning (Kapitel 4)</span>
-              <span class="progress-labels">
-                <span>OK</span>
-                <span>Fixat</span>
-                <span>Separat</span>
-                <span>Excluderat</span>
-              </span>
             </summary>
 
             <div class="chapter-row">
-              <span>Drivenhet och kedjor:</span>
-              <input type="radio" name="undercarriage" id="ok" value="ok" />
-              <input type="radio" name="undercarriage" id="fixed" value="fixed" />
-              <input type="radio" name="undercarriage" id="separate" value="separate" />
-              <input type="radio" name="undercarriage" id="not-included" value="not-included" /><br />
+              <label>Drivenhet och kedjor:</label>
+              <select id="4.0" name="main_chain">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Upphängningsarmar och styrhjul:</span>
-              <input type="radio" name="pallettes" id="ok" value="ok" />
-              <input type="radio" name="pallettes" id="fixed" value="fixed" />
-              <input type="radio" name="pallettes" id="separate" value="separate" />
-              <input type="radio" name="pallettes" id="not-included" value="not-included" /><br />
+              <label>Upphängningsarmar och styrhjul:</label>
+              <select id="4.1" name="bottom_bearing">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Gejder och vändkurvor:</span>
-              <input type="radio" name="peripheral" id="ok" value="ok" />
-              <input type="radio" name="peripheral" id="fixed" value="fixed" />
-              <input type="radio" name="peripheral" id="separate" value="separate" />
-              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+              <label>Drivenhet och kedjor:</label>
+              <select id="4.2" name="drive_chain">
+              <option value="ok">OK</option>
+              <option value="fixed">Åtgärdat</option>
+              <option value="noted">Bevakas</option>
+              <option value="excluded">Excluderat</option>
+            </select>
             </div>
 
+            <div class="chapter-row">
+              <label>Gejder och vändkurvor:</label>
+              <select id="4.3" name="guide_curves">
+              <option value="ok">OK</option>
+              <option value="fixed">Åtgärdat</option>
+              <option value="noted">Bevakas</option>
+              <option value="excluded">Excluderat</option>
+            </select>
+            </div>
+
+            <div class="chapter-row">
+              <label>Dörr mekanism:</label>
+              <select id="4.4" name="door_mechanism">
+              <option value="ok">OK</option>
+              <option value="fixed">Åtgärdat</option>
+              <option value="noted">Bevakas</option>
+              <option value="excluded">Excluderat</option>
+            </select>
+            </div>
+            <div class="chapter-row">
+              <textarea name="comments_4" id="comments_4" cols="50" rows="5"></textarea>
+            </div>
           </details>
         </section>
 
@@ -387,26 +430,5 @@
         <input id="submit-button" type="submit" value="Submit" />
       </form>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('paternosterForm');
-
-        form.addEventListener('submit', function (e) {
-          e.preventDefault(); // Prevent the default form submission
-
-          // Get the selected values from the dropdowns
-          const selectedValues = {
-            dropdown1: document.getElementById('coating-doors').value,
-            dropdown2: document.getElementById('inspection').value,
-            dropdown3: document.getElementById('cables').value,
-            dropdown4: document.getElementById('shelves').value,
-            dropdown5: document.getElementById('2.5').value,
-          };
-
-          // Log the selected values (you can perform further actions here)
-          console.log(selectedValues);
-        });
-      });
-    </script>
 </body>
 </html>
