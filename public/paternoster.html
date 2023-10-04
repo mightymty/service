@@ -300,60 +300,70 @@
           <details>
             <summary>
               <span>Funktioner (Kapitel 5)</span>
-              <span class="progress-labels">
-                <span>OK</span>
-                <span>Fixat</span>
-                <span>Separat</span>
-                <span>Excluderat</span>
-              </span>
+
             </summary>
 
             <div class="chapter-row">
-              <span>Ljusridå för personskydd:</span>
-              <input type="radio" name="undercarriage" id="ok" value="ok" />
-              <input type="radio" name="undercarriage" id="fixed" value="fixed" />
-              <input type="radio" name="undercarriage" id="separate" value="separate" />
-              <input type="radio" name="undercarriage" id="not-included" value="not-included" /><br />
+              <label>Ljusridå för personskydd:</label>
+              <select id="5.0" name="lightcurtain">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Fotoceller för godsskydd:</span>
-              <input type="radio" name="pallettes" id="ok" value="ok" />
-              <input type="radio" name="pallettes" id="fixed" value="fixed" />
-              <input type="radio" name="pallettes" id="separate" value="separate" />
-              <input type="radio" name="pallettes" id="not-included" value="not-included" /><br />
+              <label>Fotoceller för godsskydd:</label>
+              <select id="5.1" name="fotcellsgoods">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Nödstopp:</span>
-              <input type="radio" name="peripheral" id="ok" value="ok" />
-              <input type="radio" name="peripheral" id="fixed" value="fixed" />
-              <input type="radio" name="peripheral" id="separate" value="separate" />
-              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+              <label>Nödstopp:</label>
+              <select id="5.2" name="emergency">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Batteri för backup:</span>
-              <input type="radio" name="peripheral" id="ok" value="ok" />
-              <input type="radio" name="peripheral" id="fixed" value="fixed" />
-              <input type="radio" name="peripheral" id="separate" value="separate" />
-              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+              <label>Batteri och Backup:</label>
+              <select id="5.3" name="battery">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Arbetsbelysning:</span>
-              <input type="radio" name="peripheral" id="ok" value="ok" />
-              <input type="radio" name="peripheral" id="fixed" value="fixed" />
-              <input type="radio" name="peripheral" id="separate" value="separate" />
-              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+              <label>Arbetsbelysning:</label>
+              <select id="5.4" name="light">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Test av positionslist:</span>
-              <input type="radio" name="peripheral" id="ok" value="ok" />
-              <input type="radio" name="peripheral" id="fixed" value="fixed" />
-              <input type="radio" name="peripheral" id="separate" value="separate" />
-              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+              <label>Manuel körning av dörr och hyllplan:</label>
+              <select id="5.5" name="manualdrive">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
+            </div>
+            <div class="chapter-row">
+              <textarea name="comments_4" id="comments_4" cols="50" rows="5"></textarea>
             </div>
           </details>
         </section>
@@ -362,66 +372,72 @@
           <details>
             <summary>
               <span>Testkörning (Kapitel 6)</span>
-              <span class="progress-labels">
-                <span>OK</span>
-                <span>Fixat</span>
-                <span>Separat</span>
-                <span>Excluderat</span>
-              </span>
             </summary>
           </details>
         </section>
-
+        <div class="chapter-row">
+          <label>Smörjning hyllplan:</label>
+          <select id="6.0" name="main_chain">
+            <option value="ok">OK</option>
+            <option value="fixed">Åtgärdat</option>
+            <option value="noted">Bevakas</option>
+            <option value="excluded">Excluderat</option>
+          </select>
+        </div>
         <section id="kap-7">
           <details>
             <summary>
               <span>Utbildningar (Kapitel 7)</span>
-              <span class="progress-labels">
-                <span>OK</span>
-                <span>Fixat</span>
-                <span>Separat</span>
-                <span>Excluderat</span>
-              </span>
             </summary>
 
             <div class="chapter-row">
-              <span>Basfunktioner:</span>
-              <input type="radio" name="coating-doors" id="ok" value="ok" />
-              <input type="radio" name="coating-doors" id="fixed" value="fixed" />
-              <input type="radio" name="coating-doors" id="separate" value="separate" />
-              <input type="radio" name="coating-doors" id="not-included" value="not-included" /><br />
+              <label>Styrsystem och funktioner:</label>
+              <select id="7.0" name="edubasics">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Operatörskoder:</span>
-              <input type="radio" name="undercarriage" id="ok" value="ok" />
-              <input type="radio" name="undercarriage" id="fixed" value="fixed" />
-              <input type="radio" name="undercarriage" id="separate" value="separate" />
-              <input type="radio" name="undercarriage" id="not-included" value="not-included" /><br />
+              <label>Operatöskoder:</label>
+              <select id="7.1" name="educodes">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Säkerhet:</span>
-              <input type="radio" name="cables" id="ok" value="ok" />
-              <input type="radio" name="cables" id="fixed" value="fixed" />
-              <input type="radio" name="cables" id="separate" value="separate" />
-              <input type="radio" name="cables" id="not-included" value="not-included" /><br />
+              <label>Säkerhetsutrustning:</label>
+              <select id="7.2" name="edusafety">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Lastning och vikter:</span>
-              <input type="radio" name="pallettes" id="ok" value="ok" />
-              <input type="radio" name="pallettes" id="fixed" value="fixed" />
-              <input type="radio" name="pallettes" id="separate" value="separate" />
-              <input type="radio" name="pallettes" id="not-included" value="not-included" /><br />
+              <label>Lastning och vikter:</label>
+              <select id="7.3" name="eduweights">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
             <div class="chapter-row">
-              <span>Backup av databaser:</span>
-              <input type="radio" name="peripheral" id="ok" value="ok" />
-              <input type="radio" name="peripheral" id="fixed" value="fixed" />
-              <input type="radio" name="peripheral" id="separate" value="separate" />
-              <input type="radio" name="peripheral" id="not-included" value="not-included" /><br />
+              <label>Backup av databaser:</label>
+              <select id="7.4" name="edubackup">
+                <option value="ok">OK</option>
+                <option value="fixed">Åtgärdat</option>
+                <option value="noted">Bevakas</option>
+                <option value="excluded">Excluderat</option>
+              </select>
             </div>
 
           </details>
