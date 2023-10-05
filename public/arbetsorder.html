@@ -163,33 +163,104 @@
         <input type="submit" value="Skicka rapport">
     </form>
     
+   
+</body>
+<body>
+    <h1>Beställarens underskrift</h1>
+    <div>
+        <button id="clear-button">Clear</button>
+        <button id="save-button">Save</button>
+    </div>
+    <div id="signature-container">
+        <canvas id="signature-pad" width="500" height="80"></canvas>
+    </div>
+
     <script>
-        // Funktion för att uppdatera sammanfattningen när något ändras
-        function updateSummary() {
-            let sum_tim = 0;
-            let sum_res = 0;
-            let sum_trakt = 0;
-            let sum_mil = 0;
+        var canvas = document.getElementById('signature-pad');
+        var clearButton = document.getElementById('clear-button');
+        var saveButton = document.getElementById('save-button');
+        var ctx = canvas.getContext('2d');
+        var drawing = false;
+        var isDoubleSize = false;
+        var signatureData = null;
 
-            const days = ['mandag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lordag', 'sondag'];
-
-            days.forEach((day) => {
-                const tim = parseInt(document.querySelector(`input[name="tim_${day}"]`).value) || 0;
-                const res = parseInt(document.querySelector(`input[name="res_${day}"]`).value) || 0;
-                const trakt = parseInt(document.querySelector(`input[name="trakt_${day}"]`).value) || 0;
-                const mil = parseInt(document.querySelector(`input[name="mil_${day}"]`).value) || 0;
-
-                sum_tim += tim;
-                sum_res += res;
-                sum_trakt += trakt;
-                sum_mil += mil;
-            });
-
-            document.getElementById('sum_tim').textContent = sum_tim;
-            document.getElementById('sum_res').textContent = sum_res;
-            document.getElementById('sum_trakt').textContent = sum_trakt;
-            document.getElementById('sum_mil').textContent = sum_mil;
+        function startPosition(e) {
+            drawing = true;
+            ctx.lineWidth = 2; // Set your desired line width
+            ctx.strokeStyle = '#000'; // Set your desired line color
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top);
         }
+
+        function endPosition() {
+            drawing = false;
+            ctx.closePath();
+        }
+
+        function draw(e) {
+            if (!drawing) return;
+            ctx.lineTo(e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top);
+            ctx.stroke();
+        }
+
+        canvas.addEventListener('mousedown', startPosition);
+        canvas.addEventListener('mouseup', endPosition);
+        canvas.addEventListener('mousemove', draw);
+
+        canvas.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            if (!isDoubleSize) { // Toggle size on mobile only if it's not double size
+                toggleSize();
+            }
+            startPosition(e.touches[0]);
+        });
+
+        canvas.addEventListener('touchend', endPosition);
+
+        canvas.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+            draw(e.touches[0]);
+        });
+
+        clearButton.addEventListener('click', function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // Clear the signature data
+            signatureData = null;
+        });
+
+        saveButton.addEventListener('click', function() {
+            var image = canvas.toDataURL("image/png");
+            // You can send the image data to a server or do something else with it here.
+            console.log(image);
+        });
+
+        canvas.addEventListener('dblclick', function() {
+            if (!isDoubleSize) {
+                toggleSize();
+            }
+        });
+
+        function toggleSize() {
+            if (isDoubleSize) {
+                canvas.width = 500;
+                canvas.height = 80;
+                isDoubleSize = false;
+                // Redraw the signature data if it exists
+                if (signatureData) {
+                    ctx.drawImage(signatureData, 0, 0, canvas.width, canvas.height);
+                }
+            } else {
+                canvas.width = 1000;
+                canvas.height = 160;
+                isDoubleSize = true;
+            }
+        }
+
+        // Save the signature data when it's drawn
+        canvas.addEventListener('mouseup', function() {
+            signatureData = new Image();
+            signatureData.src = canvas.toDataURL("image/png");
+        });
     </script>
 </body>
 </html>

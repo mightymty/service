@@ -6,12 +6,12 @@ body, h1, h2, form {
 /* Grundläggande stilar för hela sidan */
 body {
     font-family: Arial, sans-serif;
-    background-color: #fefeff;
+    background-color: #eeeef5;
     color: #333;
 }
 
 header {
-    background-color: #d81921;
+    background-color: #fdf6f7;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -20,7 +20,7 @@ header {
 main {
     margin: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #fdfafa;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -57,13 +57,13 @@ th, td {
 }
 
 th {
-    background-color: #007BFF;
+    background-color: #d81921;
     color: #fff;
 }
 
 /* H2-stilar */
 h2 {
-    color: #007BFF;
+    color: #d81921;
     margin-top: 20px;
 }
 
