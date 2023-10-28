@@ -27,7 +27,7 @@
   <table>
     <tbody class="form">
       <tr>
-        <td>Datum: <%=date %>
+        <td>Datum: <%-date %>
         </td>
         <td>Maskintyp: <%-machine_type %></td>
         <td>Kund: <%-client %></td>
@@ -41,57 +41,59 @@
       </tr>
     </tbody>
   </table>
-  <table>
-    <tr>
-      <td>
-        <table>
-          <tr>
-            <td>Visuell inspektion / Kontroll (Kapitel 2)</td>
-          </tr>
-          <% for(let [key,value] of Object.entries(data) || []) { %>
-            <tr class="chapter-row">
-              <td>
-                <%=key%>:
-              </td>
-              <td>
-                <%=value%>
-              </td>
-            </tr>
-            <% } %>
-        </table>
-      </td>
-      <td>
-        <table>
-          <tr>
-            <td>Kommentarer:</td>
-          </tr>
-          <tr>
-            <td>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  </tr>
-  </tbody>
-  </table>
-  <footer>
+  <% data.sections.forEach(function(section,index) { %>
     <table>
       <tr>
         <td>
-          <div>CONSTRUCTOR SVERIGE AB</div>
-          <div>Box 55043</div>
-          <div>400 53 GÖTEBORG</div>
+          <table>
+            <tr>
+              <td>Kapitel <%=index%>
+              </td>
+            </tr>
+            <% for(let [key,value] of Object.entries(section) || []) { %>
+              <tr class="chapter-row">
+                <td>
+                  <%=key%>:
+                </td>
+                <td>
+                  <%=value%>
+                </td>
+              </tr>
+              <% } %>
+          </table>
         </td>
         <td>
-          <p>Org nr 556275-3839</p>
-        </td>
-        <td>
-          <p>wwww.constructor.se</p>
+          <table>
+            <tr>
+              <td>Kommentarer:</td>
+            </tr>
+            <tr>
+              <td>
+              </td>
+            </tr>
+          </table>
         </td>
       </tr>
     </table>
-  </footer>
+    <table>
+      <% }); %>
+
+        <footer>
+          <table>
+            <tr>
+              <td>
+                <div>CONSTRUCTOR SVERIGE AB</div>
+                <div>Box 55043</div>
+                <div>400 53 GÖTEBORG</div>
+              </td>
+              <td>
+                <p>Org nr 556275-3839</p>
+              </td>
+              <td>
+                <p>wwww.constructor.se</p>
+              </td>
+            </tr>
+          </table>
+        </footer>
 </body>
 </html>
